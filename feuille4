@@ -1,0 +1,70 @@
+#exercice1
+
+#1)
+ord('A')
+ord('D')
+chr(0)
+chr(3)
+
+
+#2)
+ord('M')
+
+#3)
+
+def est_chiffre(c):
+    if type(c)== int:
+        return True
+    else :
+        return False
+
+#4)
+def masquer_num(s):
+    c=''
+    for i in range(len(s)):
+        if type(s[i])== int :
+            c = c  + '*'
+        else :
+            c = c + s[i]
+    return c
+
+#exercice2
+
+def code_cesare_lettre(c,k):
+    alphabet= ['A','B','C','D','E','F','G','H','I','J','k','L','M','N','O','P','Q','R','T','U','V','W','X','Y','Z']
+    for i in range(len(alphabet)):
+        if alphabet[i]== c:
+            return alphabet[i+k]
+#         elif type(alphabet[i]) == str:
+#             return alphabet[i]
+#         elif alphabet[i]== alphabet[i].lower:
+#             return alphabet[i]
+#         
+      
+       
+ #exercice4
+
+#1)
+
+print("Valrose\b\bZ\rP")
+
+#2)
+from time import sleep
+film = [ "5 ", "4 ", "3 ", "2 ", "1 ", "BOUM !!!"]
+
+def projeter(L):
+    for i in range(len(L)):
+        print(L[i],end="")
+        sleep(0.5)
+        print("\r", end="")
+        print(" " * len(L[i]),end="")
+        print("\r", end="")
+        projeter(film)
+        print("Fin")
+
+
+    
+
+
+
+
