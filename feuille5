@@ -1,0 +1,57 @@
+#exercice4
+
+#1)
+
+print("Valrose\b\bZ\rP")
+
+#2)
+from time import sleep
+film = [ "5 ", "4 ", "3 ", "2 ", "1 ", "BOUM !!!"]
+
+def projeter(L):
+    for i in range(len(L)):
+        print(L[i],end="")
+        sleep(0.5)
+        print("\r", end="")
+        print(" " * len(L[i]),end="")
+        print("\r", end="")
+        projeter(film)
+        print("Fin")
+
+#exercice2
+
+import tkinter as tk
+
+# On crée une fenêtre
+root = tk.Tk()
+root.title("Mon programme Tk")
+
+# On crée un canvas (zone de dessin)
+Hauteur = 700
+Largeur = 700
+Dessin=tk.Canvas(root,height=Hauteur,width=Largeur,bg="white")
+Dessin.pack()
+
+delta=31.8
+
+r1=(700-delta , delta)
+r2=(delta , 700-delta)
+Dessin.create_rectangle(r1,r2,fill = '#C8A165', outline='black' )
+
+r1=(700- 2*delta , 2*delta)
+r2=(2*delta , 700- 2*delta)
+Dessin.create_rectangle(r1,r2, outline='black' )
+
+for i in range(2,21):
+    Dessin.create_line((2*delta,delta*i) , (20*delta, delta*i))
+    Dessin.create_line((delta*i,2*delta) , (delta*i, 20*delta))
+
+
+
+
+
+
+
+
+
+root.mainloop()
