@@ -1,0 +1,102 @@
+#exercice2
+
+stock = [('Pommes', 10), ('Carottes', 5), ('Radis', 23), ('Lentilles', 534), ('Poivrons', 12)]
+
+
+def maj_inventaire(stock,produit,n):
+    for i in range(len(stock)):
+        nom , quantite = stock[i]
+        if nom == produit:
+            stock[i]= (nom ,quantite - n)
+        
+    return stock
+
+assert maj_inventaire(stock,'Pommes',3) == [('Pommes', 7), ('Carottes', 5), ('Radis', 23), ('Lentilles', 534), ('Poivrons', 12)]
+
+def maj_invt(stock,produit,n):
+    for i in range(len(stock)):
+         nom , qtite  = stock[i]
+         if nom == produit:
+            stock[i] = (nom , qtite + n)
+    return stock
+
+assert  maj_invt(stock,'Pommes',3) == [('Pommes', 10), ('Carottes', 5), ('Radis', 23), ('Lentilles', 534), ('Poivrons', 12)]
+
+
+
+#2)
+
+# ajouter index error si prodit existe pas
+# ajouter Valueerror si pas assez de produit
+
+def maj_inventair(stock,produit,n):
+    for i in range(len(stock)):
+        nom , quantite = stock[i]
+        if nom == produit:
+            stock[i]= (nom ,quantite - n)
+            if quantite -n < 0:
+                raise ValueError( 'insufisant')
+    if n<0:
+        raise IndexError( 'nexiste pas ')
+            
+           
+    return stock
+        
+
+
+#exercice1
+#1
+def apparait(x,L):
+    for i in range(len(L)):
+        if L[i]== x:
+            return True
+      
+    return False
+
+assert apparait(3, [1, 2, 3, 4]) == True
+assert apparait(5, [1, 2, 3, 4]) == False
+
+
+def apparait_b_bis(x,L):
+    for element in L:
+        if element == x:
+            return True
+       
+    return False
+
+#2)
+
+def apparait_bis(x,L):
+    return x in L
+#3)
+
+def contient(L1, L2):#si contien 1 element
+    for i in range(len(L2)):
+        if L2[i] == L1:
+            return true
+    return false
+
+def contient_tt(L1,L2):# si contient tt les elements
+    for element in L1:
+        if element not in L2:
+            return False
+    return True
+
+#4)
+        
+    
+def commun(L1,L2):
+            if L1[0] == L2[0]:
+                return True
+            else:
+                return False
+            
+assert commun([1, 2, 3], [2, 3, 4]) == False
+assert commun([2, 2, 3], [2, 3, 4])== True
+
+def ératosthène(n):
+    tab = [0]*n
+    for i in range (n):
+        tab = [0]*n[i]
+        tab = True
+        
