@@ -1,0 +1,303 @@
+
+
+#exrcice1
+
+#1)
+
+alphabet = 'abcdefghijklmnopqrstuvwxyz'
+
+
+
+
+assert len(alphabet) == 26
+
+#len c'est la longeur donc un int
+
+#2)
+def indice(lettre):
+    for i in range(len(alphabet)):
+        if alphabet[i] == lettre:
+            return i
+    return 26
+
+assert indice('a') == 0
+assert indice('z') == 25
+
+#3)
+def statistiques(texte):
+    stat = [] * 27
+    nb_lettre=0
+    for i in range (len(texte)):
+        c = texte[i].lower()
+        index = indice(c)
+        stat[index] += 1
+    return stat
+#4)
+def affichage(tableau):
+    for i in range(len(tableau)):
+        print( tableau[i],':' , i)
+        
+        
+#exercice2
+        
+def concatener(L1,L2):
+    n = L1 + L2
+    tab = [0]* n
+    k = 0
+    for i in range(len(L1)):
+        L[k] = L1[i]
+        k=k+1
+        
+    for i in range(len(L2)):
+        L[k]=L2[i]
+        k=k+1
+    return L
+
+
+#exercice3
+
+def car(chaine):
+    if chaine == True:
+        return 'T'
+    if chaine == False:
+    
+
+
+def test2():
+    print('12','34','56',sep=' - ',end=':')
+    print('bon','jour',sep='') # sep entre chaque virgule , end = a la fin
+    
+
+
+i=0
+while i<n:
+    ...
+    ...
+    i=i+1
+
+for i in range(n):
+...
+...
+
+def f():
+    for i in range(1,10,3):# on peut preciser le debut la fin et le pas
+    print(i,end='')
+
+for i in range(5):#boucle for ds une boucle for
+    for j in range(i):
+    print('*',end='')
+    print(': i=',i,sep='') 
+
+
+# • Les chaînes de caractère (str)
+>>> texte='123 nous allons au bois :-)'
+>>> len(texte)
+27
+ Les caractères sont indexés de 0 à len(texte)-1.
+ 
+#parcour d'une chaine de c :
+
+
+def numéroter_caractères(chaîne):
+    print("i : chaîne[i]")
+    print("-------------")
+    for i in range(len(chaîne)):
+        print(i, ":" ,chaîne[i]) # i c'est l'indice et chaine[i] c'est ce que contient l'indice
+# • Les n-uplet (tuple)
+(3,4) # ceci est un tuple
+
+
+> c = 'Saluton !'
+>>> c[0] # Premier
+'S'
+
+
+c[len(c)-1] # Dernier
+'!'
+
+
+t = (1,True,'badour')
+>>> len(t)
+3
+>>> t[1]
+True
+
+# • les tableaux (list)
+
+[11, 23, 45, 1] # ceci est un tableau
+
+len(L)
+3
+>>> L[0] #Mon 1er est un chiffre
+6
+>>> L[1] #Mon 2nd est un booléen
+True
+>>> L[2] #Mon 3ème est une chaîne
+'Yeux'
+>>> L #Mon tout est orange
+[6, True, 'Yeux']
+
+
+def somme(liste_notes):
+    s = 0 # on renvoie une somme
+    for i in range(len(liste_notes)): # i parcourt la liste_note  on utilise len qd on est sur unr liste
+        s = s + liste_notes[i] # s est la somme qui part de 0 auquel on ajoute la valeur de ce que contient liste_note[i]
+        return s
+
+                              # le range attend un entier , pour une liste on utilise range(len(liste))
+
+def combien_de_e(chaînes):# on compte le nb de e ds une chaine 
+    n = 0
+    for i in range(len(chaîne)):# on parcours la chaine
+        if chaîne[i] == 'e': # si l'indice de la chaine contient un e
+        n = n + 1# on incremente n
+        return n # retourne n
+
+def maximum(liste): # on cherche le plus grand element d'une liste 
+""" la liste doit être non vide"""
+    m = M[0] # m variable qui contient le 1 er element de M
+    for i in range(len(liste)):# on parcours la liste 
+        if liste[i] > m:# si les element de la liste sont plus grand que le premier elemt de la liste 
+        m = liste[i] # alors la variable m change et est remplacer par le nouvel plus grand element 
+        return m # on retourne la variable m
+
+
+def plus_longue(liste): # on cherche la plus longue chaine de la liste 
+""" la liste doit être non vide"""
+    m = M[0] # variable m contient le premier element de la liste  
+    for i in range(len(liste)):# on parcourt la liste
+        if len(liste[i]) > len(m): #si la longeur de la liste que contient l'element i est + grnad que la variable m 
+        m = liste[i] # on acctualise m a la plus longe chaine
+        return m # on retourne la var m
+
+def replacer_e_par_euro(chaîne):
+    s = "" # on cree une chaine vide 
+    for i in range(len(chaîne)):# on parcout la chaine donné 
+        if chaîne[i] == 'e': # si ce que contient l'element i en parcourant la chaine est egale a e alors
+        s = s + '€' # on ajoute a la chaine un €
+    else: # dans le cas contraire
+        s = s + chaîne[i] # on ajoute a s l'element que contient i  cela permet de reconstri-uire la chaine 
+        return s # on renvoie s
+
+def valeur_absolue_tuple(nuplet):
+    t = ()# on cree un tuple
+    for i in range(len(nuplet)):# on parcourt ce nuplet 
+        t = t +(abs(nuplet[i]) ,) # Virgule obligatoire # on ajoute dans ce tuple la valeurs absolue des elemet du nuplet de i 
+        return t # on retourne la variable t
+
+def position(lettre,chaîne): # on cherche la position d'une lettre dans un mot attension de la 1 er fois qu'elle apparait 
+    for i in range(len(chaîne)):# on parcout la chaine 
+        if chaîne[i] == lettre: # si ce que contient i est egale a la lettre donne 
+            return i # on retourne la position de i
+        return -1 # si non on retourne -1
+
+def appartient(lettre,chaîne):# on cherche si le caractre est present dans la chaine
+    return position(lettre,chaîne)>=0 # renvoie un bool
+
+Les séquences possèdent trois opérateurs en commun :
+• La longueur len(séquence)
+• L’indexage séquence[i]
+• La concaténation séq1 + séq2 (et donc le produit)
+
+
+def tiret(chaine):
+    print (chaine[i], sep=' - ', end= '')
+
+
+
+
+construire un tableau :
+    
+def valeur_absolue(tableau):
+    rés = [0] * len(tableau)#creation d'un tableau [0] fois la longeur du tableau 
+    for i in range(len(tableau)):# on parcour le tableau 
+        rés[i] = abs(tableau[i])# on definit pour la valeur de i la valeur absolut du tableau de l'element i 
+    return rés # on retourne la variable res 
+
+
+
+
+
+
+
+#exrcice1
+
+#1)
+
+alphabet = 'abcdefghijklmnopqrstuvwxyz'
+
+
+
+
+assert len(alphabet) == 26
+
+#len c'est la longeur donc un int
+
+
+def indice(lettre):
+    for i in range(len(alphabet)):
+        if alphabet[i] == lettre:
+            return i
+    return 26
+
+assert indice('a') == 0
+assert indice('z') == 25
+
+def statistiques(texte):
+    stat = [] * 27
+    nb_lettre=0
+    for i in range (len(texte)):
+        c = texte[i].lower()
+        index = indice(c)
+        stat[index] += 1
+    return stat
+        
+def tiret(chaine):
+    for i in range(len(chaine)):
+        print(chaine[i], end='')
+        if i < len(chaine)-1: # si i est plus petit que la fin de la longeur de la chaine 
+            print('-',end='')#alors on affiche - et un espace  a la fin
+            
+def tiret_bis(chaine):
+    res= ''
+    for i in range(len(chaine)):
+        res = res + print(chaine[i],end='')
+        if i < len(chaine)-1:
+            res= res + print('-', end='')
+            
+def chaine_en_tuple(chaine):
+    tule=()
+    for i in range(len(chaine)):
+        tule = tule + (chaine[i],)
+        return tule
+        
+def concatener(L1,L2):
+    n = L1 + L2
+    tab = [0]* n
+    k = 0
+    for i in range(len(L1)):
+        L[k] = L1[i]
+        k=k+1
+        
+    for i in range(len(L2)):
+        L[k]=L2[i]
+        k=k+1
+    return L
+    
+def car(chaine):
+    if chaine == True:
+        return 'T'
+    if chaine == False:
+        return 'F'
+    
+def affichage(tableau):
+    for i in range(len(tableau)):
+        print( tableau[i],':' , i)
+    
+
+
+  
+        
+    
+
+
