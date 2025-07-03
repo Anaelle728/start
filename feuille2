@@ -1,0 +1,116 @@
+#exercice1
+
+#1)
+def fac_rec(n):
+    if n == 0:
+        return 1
+    else :
+        return n * fac_rec(n-1)
+    
+#2)  
+def fac(n):
+    res = 1
+    while n > 1:
+        res = res * n
+        n = n - 1
+    return res
+
+        
+        
+        
+    
+#exercice2
+
+#1)
+def suivant(u):
+    u > 0
+    if u % 2 == 0:
+        return u//2
+    else :
+        return 3*u + 1
+    
+assert suivant(6) == 3
+assert suivant(12) == 6
+assert suivant(5) == 16
+assert suivant(2) == 1
+
+# 12 → 6 → 3 → 10 → 5 → 16 → 8 → 4 → 2 → 1
+
+#2)
+def syracuse(u):
+    res = 1
+    while u > 1:
+        res = suivant(u)
+        return res
+    
+#3)
+def nombre_syracuse(u):
+    nb_etapes=0
+    
+    while u > 1:
+        u = suivant(u)
+        nb_etapes= nb_etapes + 1
+    return nb_etapes
+    
+
+#exercice3
+
+def étoile():
+    print('*',end='')
+    
+def dièse() :
+    print('#',end='')
+    
+def nouvelle_ligne() :
+    print()
+    
+
+def tapis_a(largeur,hauteur):
+    i = 0
+    while i< hauteur:# pour chaque lignes 
+        j = 0
+        while j< largeur:# pour chaque colones
+            dièse()
+            j = j+1
+        nouvelle_ligne()
+        i=i+1
+    
+def tapis_b(largeur, hauteur):
+    i=0
+    while i< hauteur:# pour chaques lignes 
+        j = 0
+        while j < largeur:#pour chaques colones
+            if j % 2 == 0:
+                étoile()
+            else:
+                dièse()
+            j = j+ 1
+        nouvelle_ligne()
+        i=i+1
+        
+def lignes_alterné(n , sym1, sym2):# pour afficher les lignes -> *#*#*#*
+    j=0
+    while j<n:
+        if j %2== 0:
+            sym1()
+        else :
+            sym2()
+        j=j+1
+    nouvelle_ligne()
+        
+def tapis_b_bis(largeur , hauteur):
+    i= 0
+    while i< hauteur:
+        lignes_alterné(largeur , étoile,dièse )
+        i = i+1
+        
+
+    
+        
+#exercice4
+
+#1)
+def fermat(n):
+    if n >= 0:
+        return 2**2**n +1
+    
